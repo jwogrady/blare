@@ -10,5 +10,5 @@ print(resp.url)
 
 r = load_json(resp.content)
 data = dump_json(r)
-print(data, file=open('output.txt', 'w'))
+print(data, file=open('clients.txt', 'w'))
 print(data)

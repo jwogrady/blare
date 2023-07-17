@@ -20,5 +20,5 @@ def print_client_domains():
 
 t = print_client_domains()
 data = dump_json(t)
-print(data, file=open('output.txt', 'w'))
+print(data, file=open('domains.txt', 'w'))
 print(data)
