@@ -2,17 +2,13 @@ import requests
 import json
 
 from requests.auth import HTTPBasicAuth
-from dotenv import dotenv_values
 
-config = dotenv_values(".env")
-usr = config['BLESTA_USR']
-key = config['BLESTA_KEY']
-
+from blare.settings import blesta_url, blesta_format, blesta_usr, blesta_key
 
 
 def make_url(model, action):
-    url = config['BLESTA_URL']
-    format = config['BLESTA_FORMAT']
+    url = blesta_url
+    format = blesta_format
     url_parts = [url, model, action, format]
     url = ''.join(url_parts)
     return url
@@ -20,7 +16,7 @@ def make_url(model, action):
 
 def request(model, action, payload):
     url = make_url(model, action)
-    basic = HTTPBasicAuth(username=usr, password=key)
+    basic = HTTPBasicAuth(username=blesta_usr, password=blesta_key)
     response = requests.get(url=url, auth=basic, params=payload)
     return response
 
