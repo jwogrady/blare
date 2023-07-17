@@ -12,3 +12,6 @@ blesta_format = env['BLESTA_FORMAT']
 
 service_client_id = env['CLIENT_ID']
 service_package_id = env['PACKAGE_ID']
+
+client_status = env['CLIENT_STATUS']
+client_group_id = env['CLIENT_GROUP_ID']
