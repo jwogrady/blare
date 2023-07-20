@@ -2,7 +2,7 @@
 .env
 
 # output
-output.txt
+output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
