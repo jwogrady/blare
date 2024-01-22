@@ -1,13 +1,13 @@
 from blare import request
 
-def get(payload):
+def get(params):
     model ='staff/'
     action = 'get'
-    resp = request(model=model, action=action, payload=payload)
+    resp = request(model=model, action=action, params=params)
     return resp
 
-def getlist(payload):
+def getlist(params):
     model ='staff/'
     action = 'getlist'
-    resp = request(model=model, action=action, payload=payload)
+    resp = request(model=model, action=action, params=params)
     return resp

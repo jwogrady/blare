@@ -14,10 +14,10 @@ def make_url(model, action):
     return url
 
 
-def request(model, action, payload):
+def request(model, action, params):
     url = make_url(model, action)
     basic = HTTPBasicAuth(username=blesta_usr, password=blesta_key)
-    response = requests.get(url=url, auth=basic, params=payload)
+    response = requests.get(url=url, auth=basic, params=params)
     return response
 
 
