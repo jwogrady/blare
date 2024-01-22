@@ -1,5 +1,10 @@
 from blare import request
 
+# model is the one of the list of models.
+# action an item in the model's list of actions.
+# params is a dictionary of parameters to pass to the API.
+# params can be none of anything depending on what the model action can support.
+
 # Clients
 def clients_getAll(client_status, client_group_id):
     model ='clients/'
