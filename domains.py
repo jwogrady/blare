@@ -1,10 +1,10 @@
 from blare import load_json, dump_json
-from blare.services import getlist
+from blare.api import services_getlist
 
 from blare.settings import service_client_id, service_package_id
 
 
-resp = getlist(service_client_id, service_package_id)
+resp = services_getlist(service_client_id, service_package_id)
 
 
 r = load_json(resp.content)

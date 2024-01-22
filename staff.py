@@ -1,11 +1,10 @@
 from blare import load_json, dump_json
-from blare.staff import getlist, get
+from blare.api import staff_getlist, staff_get
 
 payload = {'status': 'active'}
-resp = getlist(payload)
+resp = staff_getlist(payload)
 payload = {'staff_id': 1}
-resp2 = get(payload)
-
+resp2 = staff_get(payload)
 
 r = load_json(resp.content)
 r2 = load_json(resp2.content)
