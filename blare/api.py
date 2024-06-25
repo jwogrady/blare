@@ -31,6 +31,21 @@ def services_getbyclient(client_id, package_id):
 
     return resp
 
+#Packages
+def packages_getlist(company_id, page=1, order_by={'name': 'ASC'}):
+    model = 'packages/'
+    action = 'getlist'
+    params = {'page': 1, 'status': 'active', 'filters[module_id]': model_id}
+    resp = request(model=model, action=action, params=params)
+    return resp
+
+def packages_getall(company_id, client_group_id):
+    model = 'packages/'
+    action = 'getall'
+    params = {'status': company_id, 'client_group_id': client_group_id}
+    resp = request(model=model, action=action, params=params)
+    return resp
+
 # Staff
 def staff_get(params):
     model ='staff/'
