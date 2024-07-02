@@ -83,3 +83,15 @@ data = dump_json(r)
 data2 = dump_json(r2)
 print(data, file=open('output/staff_getlist.json', 'w'))
 print(data2, file=open('output/staff_get.json', 'w'))
+
+
+# Services
+
+payload = {'client_id': 815, 'package_id': 112}
+resp = services_getlist(**payload)
+
+r = load_json(resp.content)
+data = dump_json(r)
+print(data, file=open('output/services.json', 'w'))
+
+print(data)

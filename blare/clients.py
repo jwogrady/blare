@@ -1,6 +1,6 @@
 from blare.utils import request
 
-def clients_getAll(client_status=2, client_group_id=1):
+def clients_getAll(client_status, client_group_id):
     model ='clients/'
     action = 'getall'
     params = {'status': client_status, 'client_group_id': client_group_id}
