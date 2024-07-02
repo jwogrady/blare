@@ -1,7 +1,5 @@
 from blare.utils import request
 
-
-# Clients
 def clients_getAll(client_status=2, client_group_id=1):
     model ='clients/'
     action = 'getall'

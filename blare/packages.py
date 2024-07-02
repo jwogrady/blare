@@ -1,4 +1,3 @@
-
 from blare.utils import request
 
 def packages_getlist(page, status):
