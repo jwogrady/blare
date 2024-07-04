@@ -3,6 +3,7 @@ from blare.services import services_getlist
 from blare.clients import clients_getAll
 from blare.packages import packages_getlist, packages_getall
 from blare.staff import staff_getlist, staff_get
+from blare.domains import domains_getall
 
 
 # Domain Report
@@ -95,3 +96,13 @@ data = dump_json(r)
 print(data, file=open('output/services.json', 'w'))
 
 print(data)
+
+
+# Domain Manager
+
+r = load_json(domains_getall().content)
+data = dump_json(r)
+
+data = dump_json(r)
+print(data)
+print(data, file=open('output/domains.json', 'w'))

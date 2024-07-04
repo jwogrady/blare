@@ -10,12 +10,7 @@ def getall():
 
     return resp
 
-r = load_json(getall().content)
-data = dump_json(r)
 
-data = dump_json(r)
-print(data)
-print(data, file=open('output/domains.json', 'w'))
 
 '''
  * All public model methods are accessible. Plugin models may also be invoked by
