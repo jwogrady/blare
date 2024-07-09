@@ -1,5 +1,11 @@
-<h1>Client List</h1>
-<a href="{% url 'client_create' %}">Add New Client</a>
+{% extends './base.html' %}
+
+{% block title %}Client - List{% endblock %}
+
+{% block content %}
+
+<h2>List</h2>
+<a href="{% url 'client_create' %}">Add New</a>
 <ul>
     {% for client in clients %}
     <li>
@@ -9,3 +15,5 @@
     </li>
     {% endfor %}
 </ul>
+
+{% endblock %}
