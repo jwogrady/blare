@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,28 @@
     <link rel="stylesheet" href="{% static './style.css' %}">
 
 </head>
+
 <body>
     <header>
-        <h1>Clients</h1>
+        <h1>Client</h1>
 
     </header>
     <main>
-        {% block content %}{% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+        {% if request.path == '/clients/' %}
+
+        <p><a href="{% url 'client_create' %}">Add client</a></p>
+        {% else %}
+        <p><a href="{% url 'client_list' %}">Cancel</a></p>
+        {% endif %}
+
     </main>
     <footer>
-        <p>&copy; 2024 My Django App</p>
+        <p>Blare &copy; {% now "Y" %}</p>
     </footer>
 </body>
+
 </html>

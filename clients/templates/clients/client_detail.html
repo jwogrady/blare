@@ -9,6 +9,4 @@
 <p>Address: {{ client.mailing_address }}</p>
 <a href="{% url 'client_update' client.pk %}">Edit</a>
 <a href="{% url 'client_delete' client.pk %}">Delete</a>
-<a href="{% url 'client_list' %}">Back to List</a>
-
 {% endblock %}
