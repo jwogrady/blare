@@ -1,7 +1,7 @@
 import os
 import requests
 from django.core.management.base import BaseCommand
-from blare.models import Package, packageName, packageDescription
+from blare.models.package import Package, packageName, packageDescription
 from dotenv import dotenv_values
 from requests.auth import HTTPBasicAuth
 

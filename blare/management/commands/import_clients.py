@@ -1,7 +1,7 @@
 import os
 import requests
 from django.core.management.base import BaseCommand
-from blare.models import Client
+from blare.models.client import Client
 from dotenv import dotenv_values
 from requests.auth import HTTPBasicAuth
 
@@ -41,6 +41,8 @@ class Command(BaseCommand):
         if not api_url or not api_username or not api_key:
             self.stdout.write(self.style.ERROR('API_URL, API_USERNAME, and API_KEY environment variables must be set'))
             return
+        
+        print(api_url)
 
         # Fetch data from the API with basic authentication
         response = requests.get(api_url, auth=HTTPBasicAuth(api_username, api_key))
