@@ -31,6 +31,13 @@ class Command(BaseCommand):
         api_username = env['BLESTA_USR']
         api_key = env['BLESTA_KEY']
 
+        model = "clients"
+        action = "getAll.json"
+
+        url_parts = [api_url, model, action]
+
+        api_url = "/".join(url_parts)
+
         if not api_url or not api_username or not api_key:
             self.stdout.write(self.style.ERROR('API_URL, API_USERNAME, and API_KEY environment variables must be set'))
             return
