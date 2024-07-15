@@ -2,7 +2,7 @@ import os
 import requests
 from django.core.management.base import BaseCommand
 from blare.models import Client
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 from requests.auth import HTTPBasicAuth
 
 class Command(BaseCommand):
@@ -23,12 +23,13 @@ class Command(BaseCommand):
             None
         """
         # Load environment variables from the .env file
-        load_dotenv()
+
+        env = dotenv_values(".env")
 
         # Get the API URL and credentials from the environment variables
-        api_url = os.getenv('BLESTA_URL')
-        api_username = os.getenv('BLESTA_USR')
-        api_key = os.getenv('BLETA_KEY')
+        api_url = env['BLESTA_URL']
+        api_username = env['BLESTA_USR']
+        api_key = env['BLESTA_KEY']
 
         if not api_url or not api_username or not api_key:
             self.stdout.write(self.style.ERROR('API_URL, API_USERNAME, and API_KEY environment variables must be set'))
