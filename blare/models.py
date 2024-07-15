@@ -51,7 +51,7 @@ class Package(models.Model):
     qty = models.IntegerField(null=True, blank=True)
     client_qty = models.IntegerField(null=True, blank=True)
     module_row = models.IntegerField()
-    module_group = models.IntegerField()
+    module_group = models.IntegerField(null=True, blank=True)
     module_group_client = models.IntegerField()
     taxable = models.BooleanField()
     single_term = models.BooleanField()
@@ -63,12 +63,12 @@ class Package(models.Model):
     upgrades_use_renewal = models.BooleanField()
     manual_activation = models.BooleanField()
     override_price = models.BooleanField()
-    module_name = models.CharField(max_length=255)
+    module_name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True)
     description_html = models.TextField(blank=True)
 
-    names = models.ManyToManyField(packageName, related_name='clients')
-    descriptions = models.ManyToManyField(packageDescription, related_name='clients')
+    names = models.ManyToManyField(packageName, related_name='packages')
+    descriptions = models.ManyToManyField(packageDescription, related_name='packages')
 
     def __str__(self):
         return self.name
