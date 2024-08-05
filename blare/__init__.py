@@ -9,4 +9,9 @@ load_dotenv()
 
 @app.route('/hello')
 def hello():
-    return '<h1>Hello, World!</h1><p>"{secret}" is the secret!</p><p>"{email}" is the email!</p>'.format(secret=os.getenv('SECRET'), email=os.getenv('EMAIL'))
+    secret = os.getenv('SECRET_KEY')
+    email = os.getenv('ADMIN_EMAIL')
+    return '<h1>Hello, World!</h1><ul><li>Secret: {secret}</li><li>Email: {email}</li></ul>'.format(
+        secret=secret,
+        email=email
+    )
